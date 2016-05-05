@@ -1,0 +1,31 @@
+{
+  "name": "parse-tpl",
+  "version": "1.0.0",
+  "description": "parse tpl into js",
+  "main": "index.js",
+  "bin": {
+    "pt": "bin/cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haledeng/parseTpl.git"
+  },
+  "keywords": [
+    "parseTpl"
+  ],
+  "author": "helondeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haledeng/parseTpl/issues"
+  },
+  "homepage": "https://github.com/haledeng/parseTpl#readme",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
+}
