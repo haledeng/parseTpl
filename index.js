@@ -6,7 +6,7 @@ function compileTmpl(tmpl) {
         strict = (/\bit\b/).test(tmpl);
     tmpl.replace(/<\/script>/ig, '</s<%=""%>cript>');
     res.push([
-        "return function (it, opt) {",
+        "function (it, opt) {",
         "    it = it || {};",
         "    with(it) {",
         "        var _$out_= [];",

@@ -1,6 +1,6 @@
 {
   "name": "parse-tpl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "parse tpl into js",
   "main": "index.js",
   "bin": {
