@@ -35,8 +35,10 @@ function parse(input) {
             output = input + '.js';
         content = compileTmpl(content);
         fs.writeFileSync(output, content);
+        return content;
     } else {
         console.log('file ' + input + ' not found!');
+        return '';
     }
 }
 
