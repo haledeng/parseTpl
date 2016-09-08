@@ -8,21 +8,19 @@ function compileTmpl(tmpl) {
     res.push([
         "function (it, opt) {",
         "    it = it || {};",
-        "    with(it) {",
-        "        var _$out_= [];",
-        "        _$out_.push('" + tmpl
+        "    var _$out_= [];",
+        "    _$out_.push('" + tmpl
         .replace(/\r\n|\n|\r/g, "\v")
         .replace(/(?:^|%>).*?(?:<%|$)/g, function($0) {
-            return $0.replace(/('|\\)/g, "\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
+            return $0.replace(/('|\\)/g, "it.\\$1").replace(/[\v\t]/g, "").replace(/\s+/g, " ")
         })
         .replace(/[\v]/g, EOL)
-        .replace(/<%==(.*?)%>/g, "', opt.encodeHtml($1), '")
-        .replace(/<%=(.*?)%>/g, "', $1, '")
+        .replace(/<%==(.*?)%>/g, "', opt.encodeHtml(it.$1), '")
+        .replace(/<%=(.*?)%>/g, "', it.$1, '")
         .replace(/<%(<-)?/g, "');" + EOL + "      ")
-        .replace(/->(\w+)%>/g, EOL + "      $1.push('")
+        .replace(/->(\w+)%>/g, EOL + "      it.$1.push('")
         .split("%>").join(EOL + "      _$out_.push('") + "');",
-        "      return _$out_.join('');",
-        "    }",
+        "    return _$out_.join('');",
         "}"
     ].join(EOL).replace(/_\$out_\.push\(''\);/g, ''));
 
