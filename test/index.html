@@ -1,0 +1,23 @@
+<ul class="xxl-list">
+	<% 
+	var item;
+	for (var i = 0, l = data.length; i < l; ++i) { 
+		item = data[i];
+	%>
+	<li class="xxl-item border-bottom-1px">
+		<a href="<%= item.targeturl %>" class="xxl-item__left" target="_blank">
+			<img src="<%= pics[i] %>" alt="">
+		</a>
+		<div class="xxl-item__right">
+			<p class="xxl-item__price"></p>
+			<p class="xxl-item__num"></p>
+		</div>
+		<div class="xxl-item__middle">
+			<a href="<%= item.targeturl %>" class="xxl-item__title"  target="_blank">
+				<%= item.title %>
+			</a>
+			<p>[<%= item.quxian %>]&nbsp;<%= item.company %></p>
+		</div>
+	</li>
+	<% } %>
+</ul>
