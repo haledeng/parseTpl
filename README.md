@@ -1,12 +1,18 @@
 # parseTpl
-parse tpl into js
+A simple template engine to parse tpl into JS.
 
-### install
+### Install
 ```
 npm i -g parse-tpl
 ```
 
-### usage
+### Use as global command
 ```
 pt input.html
+```
+
+### Use as npm module
+```
+var parser = require('parse-tpl');
+var content = parser(string);
 ```
